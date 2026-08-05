@@ -20,6 +20,18 @@
             margin: auto;
             padding: 10px;
         }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+        .direitos{
+            text-align: center;
+            color: rgb(237, 24, 166);
+
+        }
+        .artigo{
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +42,7 @@
 
     <main>
        <article>
-        <img src="primeiro.png"
+        <img src="primeiro.png">
         <div>
             <h2>Top 5 - Melhores Atletas do Handebol</h2>
             <p class="artigo">Por: Maria Vitoria</p>
@@ -45,10 +57,49 @@
             <button>🤾🏻‍♂️<span>0</span></button>
         </div>
        </article>
+       
+       <article>
+        <img src="segundo.png">
+       <div>
+            <h2>Explicar as posições em quadra (pontas, armadores, pivô e goleiro) e suas funções.</h2>
+            <p class="artigo">Por: Maria Vitoria</p>
+            <p> No handebol, o <b>goleiro</b> defende o gol e inicia os contra-ataques. 
+                O <b>armador central</b> organiza as jogadas e comanda o ritmo do time. 
+                Os <b>armadores laterais</b> se destacam pela força e arremessos de longa distância. 
+                Os <b>pontas</b> usam a velocidade para atacar pelas laterais em ângulos difíceis, enquanto
+                 o <b>pivô</b> briga pelo espaço no meio da defesa para receber a bola e finalizar.
+
+            </p>
+            <button>🤾🏻‍♀️<span>0</span></button>
+            <button>🤾🏻‍♂️<span>0</span></button>
+        </div>
+       </article>
+
     </main>
 
     <footer>
-
+        <p class= "direitos">Todos os direitos estão reservados ao autor.</p>
     </footer>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+
+            if (curtiu === false) {
+                texto.textContent++;
+                curtiu = true;
+            } else {
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    });
+</script>
 </html>
